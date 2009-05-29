@@ -18,7 +18,7 @@ namespace Fpi.Ppg.UI
 
 		private static String ms_strApplicationName = String.Empty;
 		private static String ms_strApplicationVersion = String.Empty;
-		private static String ms_strApplicationCopyright = "Copyright © Fridge Productions 2006";
+		private static String ms_strApplicationCopyright = "Copyright © 2006-2009 Fridge Productions";
 		private static String ms_strStatus = "Initializing Application";
 		private static Boolean ms_bAllowClose = false;
 
@@ -42,7 +42,31 @@ namespace Fpi.Ppg.UI
 				}
 			}
 		}
-		
+
+		private static DateTime _compiledDate;
+		public static DateTime DateCompiled
+		{
+			get
+			{
+				if ( _compiledDate == DateTime.MinValue ) {
+
+					// Assumes that in AssemblyInfo.cs the version is specified as 1.0.*
+					// The remaining numbers are generated from the date.
+					// This routine decodes them.
+
+					Version v = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
+
+					// v.Build is days since Jan. 1, 2000
+					// v.Revision*2 is seconds since local midnight
+					// (NEVER daylight saving time)
+
+					_compiledDate = new DateTime(v.Build * TimeSpan.TicksPerDay + v.Revision * TimeSpan.TicksPerSecond * 2).AddYears(1999);
+				}
+
+				return _compiledDate;
+			}
+		}
+
 		private SplashForm()
 		{
 			InitializeComponent();
@@ -58,7 +82,7 @@ namespace Fpi.Ppg.UI
 		{
 			ms_splashForm = new SplashForm();
 			ms_splashForm.applicationNameLabel.Text = ms_strApplicationName;
-			ms_splashForm.versionLabel.Text = ms_strApplicationVersion;
+			ms_splashForm.versionLabel.Text = String.Format("v{0} ({1})", ms_strApplicationVersion, DateCompiled.ToString("yyyy/MM/dd"));
 			ms_splashForm.copyrightLabel.Text = ms_strApplicationCopyright;
 
 			System.Windows.Forms.Application.Run(ms_splashForm);

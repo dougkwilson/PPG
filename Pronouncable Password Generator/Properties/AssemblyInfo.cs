@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Jadeia")]
+[assembly: AssemblyTitle("Pronounceable Password Generator")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Fridge Productions Inc.")]
-[assembly: AssemblyProduct("Jadeia")]
-[assembly: AssemblyCopyright("Copyright © Fridge Productions 2006")]
+[assembly: AssemblyCompany("Fridge Productions")]
+[assembly: AssemblyProduct("PPG")]
+[assembly: AssemblyCopyright("Copyright © 2006-2009 Fridge Productions")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -29,5 +29,5 @@ using System.Runtime.InteropServices;
 //      Build Number
 //      Revision
 //
-[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyFileVersion("1.0.0.0")]

@@ -15,7 +15,7 @@ namespace Fpi.Ppg
 		[STAThread]
 		static void Main()
 		{
-			if ( DateTime.Now <= new DateTime(2009, 12, 31) )
+			if ( DateTime.Now <= DateCompiled.AddMonths(6) )
 			{
 				System.Windows.Forms.Application.EnableVisualStyles();
 				System.Windows.Forms.Application.SetCompatibleTextRenderingDefault(false);
@@ -32,5 +32,31 @@ namespace Fpi.Ppg
 		{
 			return String.Empty;
 		}
+
+		private static DateTime _compiledDate;
+		public static DateTime DateCompiled
+		{
+			get
+			{
+				if ( _compiledDate == DateTime.MinValue ) {
+
+					// Assumes that in AssemblyInfo.cs the version is specified as 1.0.*
+					// The remaining numbers are generated from the date.
+					// This routine decodes them.
+
+					Version v = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
+
+					// v.Build is days since Jan. 1, 2000
+					// v.Revision*2 is seconds since local midnight
+					// (NEVER daylight saving time)
+
+					_compiledDate = new DateTime(v.Build * TimeSpan.TicksPerDay + v.Revision * TimeSpan.TicksPerSecond * 2).AddYears(1999);
+				}
+
+				return _compiledDate;
+			}
+		}
+
+
 	}
 }

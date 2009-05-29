@@ -38,13 +38,13 @@ namespace Fpi.Ppg.UI
 			this.fadeTimer = new System.Windows.Forms.Timer(this.components);
 			this.StatusLabel = new System.Windows.Forms.Label();
 			this.closeLabel = new System.Windows.Forms.Label();
-			((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).BeginInit();
+			( (System.ComponentModel.ISupportInitialize)( this.LogoPictureBox ) ).BeginInit();
 			this.SuspendLayout();
 			// 
 			// WarningLabel
 			// 
-			this.WarningLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.WarningLabel.Anchor = ( (System.Windows.Forms.AnchorStyles)( ( ( System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left )
+									| System.Windows.Forms.AnchorStyles.Right ) ) );
 			this.WarningLabel.Location = new System.Drawing.Point(12, 198);
 			this.WarningLabel.Name = "WarningLabel";
 			this.WarningLabel.Size = new System.Drawing.Size(419, 54);
@@ -54,8 +54,8 @@ namespace Fpi.Ppg.UI
 			// 
 			// LogoPictureBox
 			// 
-			this.LogoPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("LogoPictureBox.Image")));
-			this.LogoPictureBox.InitialImage = ((System.Drawing.Image)(resources.GetObject("LogoPictureBox.InitialImage")));
+			this.LogoPictureBox.Image = ( (System.Drawing.Image)( resources.GetObject("LogoPictureBox.Image") ) );
+			this.LogoPictureBox.InitialImage = ( (System.Drawing.Image)( resources.GetObject("LogoPictureBox.InitialImage") ) );
 			this.LogoPictureBox.Location = new System.Drawing.Point(12, 19);
 			this.LogoPictureBox.Name = "LogoPictureBox";
 			this.LogoPictureBox.Size = new System.Drawing.Size(100, 100);
@@ -67,7 +67,7 @@ namespace Fpi.Ppg.UI
 			// applicationNameLabel
 			// 
 			this.applicationNameLabel.AutoSize = true;
-			this.applicationNameLabel.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.applicationNameLabel.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ( (byte)( 0 ) ));
 			this.applicationNameLabel.Location = new System.Drawing.Point(118, 19);
 			this.applicationNameLabel.Name = "applicationNameLabel";
 			this.applicationNameLabel.Size = new System.Drawing.Size(123, 32);
@@ -105,9 +105,8 @@ namespace Fpi.Ppg.UI
 			this.StatusLabel.AutoSize = true;
 			this.StatusLabel.Location = new System.Drawing.Point(121, 173);
 			this.StatusLabel.Name = "StatusLabel";
-			this.StatusLabel.Size = new System.Drawing.Size(107, 13);
+			this.StatusLabel.Size = new System.Drawing.Size(0, 13);
 			this.StatusLabel.TabIndex = 2;
-			this.StatusLabel.Text = "Initializing Application";
 			this.StatusLabel.Click += new System.EventHandler(this.SplashForm_Click);
 			// 
 			// closeLabel
@@ -145,7 +144,7 @@ namespace Fpi.Ppg.UI
 			this.Text = "Jadeia";
 			this.TopMost = true;
 			this.Click += new System.EventHandler(this.SplashForm_Click);
-			((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).EndInit();
+			( (System.ComponentModel.ISupportInitialize)( this.LogoPictureBox ) ).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
